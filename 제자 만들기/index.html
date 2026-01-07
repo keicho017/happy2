@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>제자 만들기</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+</head>
+<body>
+
+<header class="game-header">
+  <span class="title">✨ 제자 만들기</span>
+</header>
+
+<main class="game-screen">
+  <div id="character">
+    <img id="face" class="layer face">
+    <img id="ear-left" class="layer ear">
+    <img id="ear-right" class="layer ear mirror">
+    <img id="eye" class="layer eye">
+    <img id="nose" class="layer nose">
+    <img id="mouth" class="layer mouth">
+    <img id="accessory" class="layer accessory">
+  </div>
+</main>
+
+<section class="ui-container">
+  <nav class="tab-bar">
+    <button onclick="selectPart('eye')">👀</button>
+    <button onclick="selectPart('nose')">👃</button>
+    <button onclick="selectPart('mouth')">👄</button>
+    <button onclick="selectPart('accessory')">🎀</button>
+  </nav>
+
+  <div class="control-grid">
+    <div class="slider-card">
+      <label>↕️ 상하 위치</label>
+      <input type="range" min="0" max="100" value="50" oninput="moveSelected(this.value)">
+    </div>
+    <div class="slider-card">
+      <label>🔍 파츠 크기</label>
+      <input type="range" min="5" max="100" value="30" oninput="resizeSelected(this.value)">
+    </div>
+  </div>
+
+  <div class="ear-grid">
+    <div class="slider-card">
+      <label>👂 귀 간격</label>
+      <input type="range" min="0" max="50" value="25" oninput="adjustEarX(this.value)">
+    </div>
+    <div class="slider-card">
+      <label>👂 귀 높이</label>
+      <input type="range" min="0" max="100" value="25" oninput="adjustEarY(this.value)">
+    </div>
+    <div class="slider-card full-width">
+      <label>👂 귀 크기 조절</label>
+      <input type="range" min="5" max="50" value="25" oninput="resizeEars(this.value)">
+    </div>
+  </div>
+</section>
+
+<footer class="action-bar">
+  <button class="btn-random" onclick="randomize()">🎲 랜덤 생성</button>
+  <button class="btn-save" onclick="savePNG()">💾 저장하기</button>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

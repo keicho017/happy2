@@ -1,0 +1,22 @@
+{
+  "name": "조하이 제자 만들기",
+  "short_name": "조하이",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
+  "description": "나만의 조하이 제자를 만들어보세요!",
+  "icons": [
+    {
+      "src": "assets/happy/happy_1.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "assets/happy/happy_1.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
